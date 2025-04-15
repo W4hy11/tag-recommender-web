@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tag Recommender</title>
+    <script src="/script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            background: #f4f4f4;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>🔍 Tag Recommender</h2>
+    <input type="text" id="keyword" placeholder="Masukkan kata kunci">
+    <button onclick="getTags()">Cari</button>
+
+    <div id="result" style="display:none;">
+        <p id="tagsOutput"></p>
+        <button onclick="copyTags()">📋 Copy</button>
+    </div>
+</body>
+</html>
