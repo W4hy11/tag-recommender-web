@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify, send_file
 import requests
 
 app = Flask(__name__)
@@ -19,8 +19,12 @@ def get_tags(keyword):
     return tags
 
 @app.route("/")
-def index():
-    return render_template("index.html")
+def serve_index():
+    return send_file("index.html")
+
+@app.route("/script.js")
+def serve_script():
+    return send_file("script.js")
 
 @app.route("/get_tags", methods=["POST"])
 def get_tags_route():
